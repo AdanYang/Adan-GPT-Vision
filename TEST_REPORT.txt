@@ -1,0 +1,30 @@
+ComfyUI-GPT-Vision — 2026-11-05
+
+Result: 18/18 Python unittest cases passed.
+Method: local loopback HTTP server, fabricated unit-test credentials, no external model calls.
+Runtime: Python 3.12.14; numpy 2.3.5; Pillow 13.0.0; Brotli 1.2.1.
+
+Covered:
+- All six images sent once, in order; long response text preserved.
+- Two image batches, resize without upscaling.
+- Genuine Brotli body despite Accept-Encoding: identity.
+- gzip, zlib deflate, raw deflate.
+- Incorrect br header on valid plain JSON, with diagnostic warning.
+- Corrupt br fails instead of becoming prompt text.
+- Missing Brotli dependency gives an actionable installation message.
+- Responses protocol, including skipping reasoning output items.
+- Complete endpoint URL not duplicated.
+- Endpoint/API-mode mismatch rejected before request.
+- max_tokens / max_completion_tokens / omit compatibility.
+- HTTP 401 stops execution; echoed fake credentials redacted.
+- HTML/non-JSON response fails clearly.
+- Empty or token-truncated analysis stops execution.
+- Timeout does not trigger automatic retry.
+- Redirect not followed with Authorization credentials.
+- Missing credentials and oversized image batch rejected before request.
+- Only the node-specific credential environment variable is used.
+
+Not tested: real provider access, real GPT model behavior, real ComfyUI UI execution,
+RunningHub installation/approval, or industrial-design output quality.
+
+Workflow artifacts: JSON parsing and bidirectional link consistency checked.

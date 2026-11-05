@@ -1,0 +1,3 @@
+# numpy and Pillow are already supplied by ComfyUI.
+# Used only if the server ignores Accept-Encoding: identity and sends real br.
+Brotli>=1.1.0
